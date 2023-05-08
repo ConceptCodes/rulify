@@ -133,7 +133,6 @@ const Calendar: React.FC<CalendarProps> = (props) => {
             ))}
           </div>
           <div className="mt-1 grid h-auto w-full grow grid-cols-7 grid-rows-5 gap-px bg-gray-200 pt-px dark:bg-gray-700">
-            <div></div>
             {blankDays.map((_, i) => (
               <div></div>
             ))}

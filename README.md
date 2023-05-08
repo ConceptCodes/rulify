@@ -38,29 +38,3 @@ Rulify is an open-source project, and we welcome contributions from the communit
 ## License
 
 Rulify is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the LICENSE file for more details. This license allows you to use, modify, and distribute the project, making it suitable for personal and commercial purposes.
-
-## Features
-
-- Visualize existing recurrence rules (RRULEs) using a user-friendly calendar interface.
-- Support for different recurrence rule options such as frequency, interval, count, and byweekday.
-- Compatible with standard RRULE strings used in other applications or services.
-
-## Getting Started
-
-Visit [rulify.conceptcodes.dev](https://rulify.conceptcodes.dev) to start using Rulify. 
-No installation or setup is required.
-
-## Usage
-
-1. Open the Rulify web application.
-2. Enter an existing RRULE string.
-4. View the recurring events on the calendar to visualize the recurrence pattern.
-
-## Contributing
-
-We welcome contributions from the community.
-If you have any suggestions or improvements, please feel free to open an issue or submit a pull request.
-
-## License
-
-Rulify is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the LICENSE file for more details.

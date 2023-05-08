@@ -26,6 +26,16 @@ const Calendar: React.FC<CalendarProps> = (props) => {
   const [datepickerHeaderDate, setDatepickerHeaderDate] = useState(new Date())
   const [selectedDate, setSelectedDate] = useState(new Date())
 
+  const colors = [
+    "bg-red-500",
+    "bg-yellow-500",
+    "bg-green-500",
+    "bg-blue-500",
+    "bg-indigo-500",
+    "bg-purple-500",
+    "bg-pink-500",
+  ]
+
   const decrement = () => {
     setDatepickerHeaderDate((prev) => subMonths(prev, 1))
   }
@@ -82,9 +92,12 @@ const Calendar: React.FC<CalendarProps> = (props) => {
       <div className="flex flex-col overflow-auto p-1">
         {events.map((event) => (
           <button className="flex h-5 shrink-0 items-center px-1 text-xs hover:bg-gray-200">
-            <span className="h-2 w-2 shrink-0 rounded-full bg-gray-500"></span>
-            {/* <span className="ml-2 font-light leading-none">2:15pm</span> */}
-            <span className="ml-2 truncate font-medium leading-none">
+            <span
+              className={cn("h-2 w-2 shrink-0 rounded-full", {
+                [colors[events.indexOf(event)]]: events.indexOf(event) < 7,
+              })}
+            ></span>
+            <span className="ml-2 truncate font-medium leading-none dark:text-white">
               {format(event, "HH:mm")}
             </span>
           </button>

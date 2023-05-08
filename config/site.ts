@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig
 export const siteConfig = {
   name: "Rulify",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Visualize your RRULE calendar events with a simple and intuitive UI.",
   mainNav: [
     {
       title: "Home",
@@ -11,7 +11,6 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/conceptcodes",
-    docs: "https://ui.shadcn.com",
+    github: "https://github.com/ConceptCodes/rulify",
   },
 }

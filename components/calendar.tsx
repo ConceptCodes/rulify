@@ -24,7 +24,6 @@ const Calendar: React.FC<CalendarProps> = (props) => {
   const [dayCount, setDayCount] = useState<Array<number>>([])
   const [blankDays, setBlankDays] = useState<Array<number>>([])
   const [datepickerHeaderDate, setDatepickerHeaderDate] = useState(new Date())
-  const [selectedDate, setSelectedDate] = useState(new Date())
 
   const colors = [
     "bg-red-500",
@@ -43,12 +42,6 @@ const Calendar: React.FC<CalendarProps> = (props) => {
   const increment = () => {
     setDatepickerHeaderDate((prev) => addMonths(prev, 1))
   }
-
-  const isToday = (date: number) =>
-    isEqual(
-      new Date(selectedDate.getFullYear(), selectedDate.getMonth(), date),
-      selectedDate
-    )
 
   const getDayCount = (date: Date) => {
     let daysInMonth = getDaysInMonth(date)
@@ -82,11 +75,7 @@ const Calendar: React.FC<CalendarProps> = (props) => {
 
   const Day = ({ day, events }: { day: number; events: Date[] }) => (
     <div className="group relative flex flex-col border-none bg-white dark:bg-slate-900">
-      <span
-        className={cn("mx-2 my-1 text-xs font-bold", {
-          "text-gray-400": !isToday(day),
-        })}
-      >
+      <span className={cn("mx-2 my-1 text-xs font-bold text-primary")}>
         {day}
       </span>
       <div className="flex flex-col overflow-auto p-1">
@@ -134,7 +123,7 @@ const Calendar: React.FC<CalendarProps> = (props) => {
           </div>
           <div className="mt-1 grid h-auto w-full grow grid-cols-7 grid-rows-5 gap-px bg-gray-200 pt-px dark:bg-gray-700">
             {blankDays.map((_, i) => (
-              <div></div>
+              <div key={i}></div>
             ))}
             {dayCount.map((d, i) => (
               <Day day={d} events={getEventsForDay(d)} />
